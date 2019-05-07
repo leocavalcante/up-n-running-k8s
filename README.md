@@ -1,10 +1,11 @@
 # Up and running Kubernetes
 
-Step-by-step guide of a custom and universal solution for plain VPS or bare-metal server.
+💠 Step-by-step guide of a custom and universal setup for plain VPSs or bare-metal servers using free and open tools.
 
-- MetalLB
-- Nginx Ingress Controller
-- Let's Encrypt TLS certificate
+- [Weave Net](https://www.weave.works/oss/net/)
+- [MetalLB](https://metallb.universe.tf/)
+- [Nginx Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
+- [Let's Encrypt TLS certificate](https://letsencrypt.org/)
 - Primarily single-node, but more nodes can be added
 
 Feel free to open Issues and Pull Requests.
