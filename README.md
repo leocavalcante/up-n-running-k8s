@@ -7,6 +7,8 @@ Step-by-step guide of a custom and universal solution for plain VPS or bare-meta
 - Let's Encrypt TLS certificate
 - Primarily single-node, but more nodes can be added
 
+Feel free to open Issues and Pull Requests.
+
 ## OS
 
 Ubuntu 18+<br>
