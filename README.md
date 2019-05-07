@@ -6,7 +6,7 @@
 - [MetalLB](https://metallb.universe.tf/)
 - [Nginx Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
 - [Let's Encrypt TLS certificate](https://letsencrypt.org/)
-- [Helm](https://helm.sh/) *optional*
+- [Helm](https://helm.sh/)
 
 Feel free to open Issues and Pull Requests.
 
