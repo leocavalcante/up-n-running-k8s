@@ -1,12 +1,12 @@
 # Up and running Kubernetes
 
-💠 Step-by-step guide of a custom and universal setup for plain VPSs or bare-metal servers using free and open tools.
+💠 Step-by-step guide of a custom and universal setup for plain VPSs or bare-metal servers using free and open tools. – *Primarily single-node, but more nodes can be freely added*
 
 - [Weave Net](https://www.weave.works/oss/net/)
 - [MetalLB](https://metallb.universe.tf/)
 - [Nginx Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
 - [Let's Encrypt TLS certificate](https://letsencrypt.org/)
-- Primarily single-node, but more nodes can be added
+- [Helm](https://helm.sh/) *optional*
 
 Feel free to open Issues and Pull Requests.
 
@@ -258,4 +258,44 @@ curl https://yourdomain.tld/hello
 Hello, world!
 Version: 1.0.0
 Hostname: web-ddb799d85-hrt6h
+```
+
+## Helm
+
+[Install Helm](https://helm.sh/docs/using_helm/#installing-helm)
+
+Create this resources to authorize `tiller`:
+
+```yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tiller
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: tiller
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: tiller
+    namespace: kube-system
+```
+
+Then
+
+```bash
+helm init --service-account tiller --history-max 200
+helm repo update
+```
+
+✔️ Checking
+
+```bash
+helm list
 ```
