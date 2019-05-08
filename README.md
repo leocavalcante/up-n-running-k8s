@@ -177,7 +177,7 @@ kubectl expose deployment web --target-port=8080 --type=NodePort
 apiVersion: extensions/v1beta1
     kind: Ingress
     metadata:
-      name: example-ingress
+      name: ingress
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /
     spec:
@@ -185,7 +185,7 @@ apiVersion: extensions/v1beta1
      - host: yourdomain.tld
        http:
          paths:
-         - path: /*
+         - path: /hello
            backend:
              serviceName: web
              servicePort: 8080
